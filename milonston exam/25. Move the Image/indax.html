@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #movingImage {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div id="movingImage"></div>
+
+<script>
+  const image = document.getElementById('movingImage');
+  let x = 0;
+  let y = 0;
+  const step = 10; // You can adjust the step size for smoother or faster movement
+
+  function move(direction) {
+    switch (direction) {
+      case 'ArrowUp':
+        y -= step;
+        break;
+      case 'ArrowDown':
+        y += step;
+        break;
+      case 'ArrowLeft':
+        x -= step;
+        break;
+      case 'ArrowRight':
+        x += step;
+        break;
+    }
+
+    image.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  document.addEventListener('keydown', function(event) {
+    move(event.key);
+  });
+</script>
+
+</body>
+</html>

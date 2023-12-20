@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Duplicate Items</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    #output {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Remove Duplicate Items from Cart</h1>
+
+  <label for="cartInput">Enter Cart Items (comma-separated):</label>
+  <textarea id="cartInput" rows="4" cols="50"></textarea>
+
+  <button onclick="removeDuplicates()">Remove Duplicates</button>
+
+  <h2>Updated Cart</h2>
+  <div id="output"></div>
+
+  <script>
+    function removeDuplicates() {
+      // Get cart input value and split into an array
+      const cartInput = document.getElementById('cartInput').value;
+      const cartItems = cartInput.split(',');
+
+      // Remove leading and trailing spaces from each item
+      const trimmedCart = cartItems.map(item => item.trim());
+
+      // Use a Set to remove duplicates
+      const uniqueItems = new Set(trimmedCart);
+
+      // Display the updated cart
+      displayUpdatedCart(Array.from(uniqueItems));
+    }
+
+    function displayUpdatedCart(updatedCart) {
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = '';
+
+      if (updatedCart.length === 0) {
+        outputDiv.textContent = 'Cart is empty.';
+      } else {
+        const ul = document.createElement('ul');
+        updatedCart.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          ul.appendChild(li);
+        });
+        outputDiv.appendChild(ul);
+      }
+    }
+  </script>
+</body>
+</html>

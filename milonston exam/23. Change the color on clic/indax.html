@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            padding: 12px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="fun()">press to change color</button>
+
+    <script>
+        function randamColor(){
+            let c ="#";
+            let range="0123456789ABCDEF";
+
+            for(let i=0;i<6;i++){
+                c =c+range[Math.floor(Math.random()*16)];
+            }
+            return c;
+        }
+
+        function fun(){
+            const bd=document.querySelector("body");
+            const vl=bd.style.backgroundColor=randamColor();
+           // console.log(vl)
+        }
+    </script>
+</body>
+</html>

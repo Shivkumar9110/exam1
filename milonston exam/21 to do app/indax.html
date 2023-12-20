@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple To-Do App</title>
+</head>
+<body>
+    <h1>Simple To-Do App</h1>
+
+    <input type="text" id="todoInput" placeholder="Add a new to-do">
+    <button onclick="addTodo()">Add</button>
+
+    <ul id="todoList"></ul>
+
+    <script>
+        function addTodo() {
+            const todoInput = document.getElementById("todoInput");
+            const todoList = document.getElementById("todoList");
+
+            // Get the value from the input field
+            const newTodo = todoInput.value;
+ 
+
+            if (newTodo.trim() !== "") {
+                // Create a new list item for the to-do
+                const listItem = document.createElement("li");
+                listItem.textContent = newTodo;
+
+                // Add the new to-do to the list
+                todoList.appendChild(listItem);
+
+                // Clear the input field
+                todoInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List</title>
+</head>
+<body>
+
+  <h2>List of Items</h2>
+  <ul id="itemList"></ul>
+  <button onclick="addItem()">Add Item</button>
+
+  <script>
+    // Your pre-existing array of list items
+    const itemListArray = [
+      "Learn JavaScript",
+      "Understand HTML and CSS",
+      "Master a Frontend Framework",
+      // Add more items as needed
+    ];
+
+    // Get the unordered list element
+    const itemList = document.getElementById("itemList");
+
+    // Variable to keep track of the current index
+    let currentIndex = 0;
+
+    function addItem() {
+      // Check if there are remaining items in the array
+      if (currentIndex < itemListArray.length) {
+        // Create a new list item element
+        const newItem = document.createElement("li");
+
+        // Set the text content of the new item
+        newItem.textContent = itemListArray[currentIndex];
+
+        // Append the new item to the list
+        itemList.appendChild(newItem);
+
+        // Increment the index for the next item
+        currentIndex++;
+      } else {
+        // Display a message when all items have been added
+        alert("All items have been added!");
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+   background-color: #414141;
+   color: white;
+   text-align: center;
+}
+body :first-child{
+    padding:30px 0px 20px 0px;
+}
+body p{
+    padding:30px 0px 20px 0px;
+}
+form{
+    margin-top: 50px;
+    display: none;
+}
+#GameEnd{
+    display: none;
+    
+}
+#StartGame{
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+#StartGame:hover{
+    color:purple;
+    background-color:palegoldenrod;
+}
+form label{
+    font-size: 20px;
+    font-weight: bold;
+}
+#btn{
+    padding: 8px;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+#btn:hover{
+    color:purple;
+    background-color:palegoldenrod;
+}
+#text{
+   
+    font-size: 18px;
+}
+#chanceCount{
+    color:rgb(255, 0, 30);
+    font-size: x-large;
+}
+#congra{
+    color: red;
+    font-size: xx-large;
+}

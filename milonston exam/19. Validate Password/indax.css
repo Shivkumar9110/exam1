@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    background-color: rgb(234, 228, 228);
+    
+}
+#container{
+    margin-top: 200px;
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+    border: 2px solid rgb(44, 44, 186);
+    border-radius: 8px;
+    box-shadow: 4px 4px 14px gray  , -4px -4px 14px gray;
+}
+h1{
+    color: rgb(49, 6, 242);
+}

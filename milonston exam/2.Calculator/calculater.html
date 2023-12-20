@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h3{
+            text-align: center;
+        }
+
+        .cal{
+            width: 310px;
+            height: 400px;
+            border-radius: 10px;
+            background-color: rgb(205, 205, 205);
+            box-shadow: 4px 2px 6px gray ,-4px -2px 6px gray;
+           
+        }
+        #display{
+            width: 300px;
+            height: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 10px;
+            
+        }
+        button{
+            padding: 15px;
+            font-size: 30px;
+            background-color: rgb(120, 120, 115);
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            border-radius: 30px;
+           
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="cal">
+        <h3>Creating by Shiv</h3>
+        <input type="text" id="display" readonly>
+        <br>
+        <button onclick="inputvalue('1')">1</button>
+        <button onclick="inputvalue('2')">2</button>
+        <button onclick="inputvalue('3')">3</button>
+        <button onclick="inputvalue('+')">+</button>
+        <br>
+        <button onclick="inputvalue('4')">4</button>
+        <button onclick="inputvalue('5')">5</button>
+        <button onclick="inputvalue('6')">6</button>
+        <button onclick="inputvalue('-')"> - </button>
+        <br>
+        <button onclick="inputvalue('7')">7</button>
+        <button onclick="inputvalue('8')">8</button>
+        <button onclick="inputvalue('9')"> 9</button>
+        <button onclick="inputvalue('*')">*</button>
+        <br>
+        <button onclick="clean()">C</button>
+        <button onclick="inputvalue('0')">0</button>
+        <button onclick="inputvalue('/')">/</button>
+        <button onclick="finalresult()">=</button>
+</div>
+
+
+    <script>
+            function inputvalue(value){
+                let display= document.querySelector('#display')
+                display.value +=value;
+            }
+
+            function clean(){
+                display.value='';
+            }
+
+
+            function finalresult(){
+
+                let display=document.getElementById('display')
+                let expression=display.value;
+
+                const opertors=['+','-','*','/'];
+                let opertor=null;
+
+                for(let op of opertors)
+                if(expression.includes(op)){
+                    opertor=op;
+                    break;
+                
+                }
+                if(opertor){
+                    const operands = expression.split(opertor)
+                    const num1=parseFloat(operands[0])
+                    const num2=parseFloat(operands[1])
+
+
+                    switch(opertor){
+                    case '+':
+                    display.value=num1+num2;
+                    break;
+
+                    case '-':
+                    display.value=num1-num2;
+                    break;
+                
+                    case '*':
+                    display.value=num1*num2;
+                    break;
+
+                    case '/':
+                        display.value=num1/num2;
+                    break;
+
+                    default:
+                        console.log("No Problem ")
+                    break;
+
+                }
+                }
+
+               
+                
+
+            }
+    </script>
+</body>
+</html>
